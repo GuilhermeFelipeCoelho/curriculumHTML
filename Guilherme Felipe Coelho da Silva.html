@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html id="htmlLang" lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo - Guilherme Felipe Coelho da Silva - Engenharia de Computação</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --light: #ecf0f1;
+            --dark: #34495e;
+            --text: #2c3e50;
+            --highlight: #e74c3c;
+            --bg-color: #f5f7fa;
+            --container-bg: white;
+            --header-bg: var(--primary);
+            --header-text: white;
+        }
+
+        /* Dark mode variables */
+        [data-theme="dark"] {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --bg-color: #121212;
+            --container-bg: #1e1e1e;
+            --header-bg: #121212;
+            --header-text: #f5f5f5;
+            --text: #e0e0e0;
+            --dark: #f5f5f5;
+        }
+
+        .theme-toggle-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .theme-toggle-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .theme-toggle-btn:hover {
+            opacity: 0.9;
+        }
+        /**/
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--container-bg);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        header {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            position: relative;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: var(--secondary);
+        }
+        
+        .header-controls {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .export-container {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+
+        section {
+            padding: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .header-acima{
+            color: var(--header-bg);
+        }
+        
+        .job-title, .degree {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+       
+        .dateperiodo {
+            color: var(--text);
+        }
+        
+        .date {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .titulo-projeto {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .projectbutton{
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s;
+            margin-right: 1.5em;
+        }
+
+        .projectbutton:hover{
+            color: var(--secondary)
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .skill-tag {
+            background-color: var(--bg-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        .projects-list {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .project-item {
+            background-color: var(--bg-color);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .project-item h4 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        body.dark-theme {
+            --primary: #34495e;
+            --secondary: #1abc9c;
+            --light: #2c3e50;
+            --dark: #ecf0f1;
+            --text: #ecf0f1;
+            background-color: #2c3e50;
+        }
+        
+        body.dark-theme .container {
+            background-color: var(--primary);
+            color: var(--text);
+        }
+        
+        body.dark-theme .project-item {
+            background-color: #3d566e;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                background-color: white;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            header {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+            }
+            
+            section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-acima">
+                <div class="export-container">
+                    <button class="theme-toggle-btn" id="pdfDownload">PDF</button>
+                </div>
+                <div class="theme-toggle-container">
+                    <button class="theme-toggle-btn" id="langToggle">EN</button>
+                    <button class="theme-toggle-btn" id="themeToggle">🌙</button>
+                </div>
+            </div>
+        <header>
+            <h1>Guilherme Felipe Coelho da Silva</h1>
+            <div class="contact-info">
+                <span>glipecoelho2@gmail.com</span>
+                <span>+55 (12) 98276-8599</span>
+                <a href="https://www.linkedin.com/in/guilherme-felipe-coelho/" target="_blank">Meu LinkedIn!</a>
+                <a href="https://github.com/GuilhermeFelipeCoelho" target="_blank">Meu GitHub!</a>
+            </div>
+        </header>
+        
+        <section id="objective">
+            <h2>Objetivo</h2>
+            <p>Estágio na área de Engenharia de Computação, Desenvolvimento e Programação ou Análise de Dados, onde posso aplicar meus conhecimentos em programação e análise de dados, contribuindo para o crescimento da empresa.</p>
+        </section>
+        
+        <section id="education">
+            <h2>Formação</h2>
+            <div class="degree">
+                <h3>Engenharia de Computação</h3>
+                <span class="date">Previsão de conclusão: [Ano de Conclusão]</span>
+            </div>
+            <p>UNIVESP - Universidade Virtual do Estado de São Paulo</p>
+            <p class="dateperiodo">[periodo]</p>
+        </section>
+        
+        <section id="experience">
+            <h2>Experiência Profissional</h2>
+            <div class="job-title">
+                <h3>Atendente</h3>
+                <span class="date">Início: setembro de 2024</span>
+            </div>
+            <p>Drogaria São Paulo (Grupo DPSP)</p>
+            <ul>
+                <li>Atendimento ao cliente, resolução de problemas, reposição de loja e organização de estoque.</li>
+            </ul>
+        </section>
+        
+        <section id="projects">
+            <h2>Projetos</h2>
+            <div class="projects-list">
+                <div class="project-item">
+                    <h4 class="titulo-projeto">Web Scraping com Python 
+                        <a href="https://github.com/GuilhermeFelipeCoelho/Python-Price-Checker" 
+                        target="_blank" 
+                        class="projectbutton">Clique e veja!</a></h4>
+                    <ul>
+                        <li>Desenvolvimento de scripts para extração de dados de websites</li>
+                        <li>Armazenamento de informações em SQLite</li>
+                        <li>Lista de valores atualizados quando o programa é executado e registrado para acompanhamento de variação</li>
+                    </ul>
+                </div>
+                <div class="project-item">
+                    <h4 class="titulo-projeto">WhatsApp Expense Tracker Bot 
+                        <a href="https://github.com/GuilhermeFelipeCoelho/Expenses-Tracker---Whatsapp-Bot-Java" 
+                        target="_blank" 
+                        class="projectbutton">Clique e veja!</a></h4>
+                    <ul>
+                        <li>Desenvolvimento de um bot utilizando Java e Spring Boot</li>
+                        <li>Facilidade de registros e controle de gastos </li>
+                        <li>Armazenamento de dados para comparação e controle de gastos de acordo com </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills">
+            <h2>Habilidades</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">Spring Boot</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">SQLite</span>
+                <span class="skill-tag">Bancos de Dados Relacionais</span>
+                <span class="skill-tag">Web Scraping</span>
+                <span class="skill-tag">Power BI</span>
+            </div>
+        </section>
+        
+        <section id="qualifications">
+            <h2>Qualificações</h2>
+            <ul>
+                <li>Capacidade de trabalhar em equipe e colaborar em projetos</li>
+                <li>Habilidade em resolver problemas e pensar criticamente</li>
+                <li>Proatividade e vontade de aprender novas tecnologias</li>
+            </ul>
+        </section>
+        
+        <section id="languages">
+            <h2>Idiomas</h2>
+            <ul>
+                <li>Português: Nativo</li>
+                <li>Inglês: Intermediário</li>
+            </ul>
+        </section>
+        
+        <footer>
+            <p>Referências disponíveis mediante solicitação</p>
+        </footer>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.dataset.theme = 
+                document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+            themeToggle.textContent = document.body.dataset.theme === 'dark' ? '☀️' : '🌙';
+        });
+
+        const langToggle = document.getElementById('langToggle');
+        const translations = {
+            'pt-BR': {
+                'Objetivo': 'Objective',
+                'Formação': 'Education',
+                'Experiência Profissional': 'Professional Experience',
+                'Projetos': 'Projects',
+                'Habilidades': 'Skills',
+                'Qualificações': 'Qualifications',
+                'Idiomas': 'Languages',
+                'Referências disponíveis mediante solicitação': 'References available upon request',
+                'Estágio na área de Engenharia de Computação, Desenvolvimento e Programação ou Análise de Dados, onde posso aplicar meus conhecimentos em programação e análise de dados, contribuindo para o crescimento da empresa.': 'Internship in Computer Engineering, Development and Programming or Data Analysis, where I can apply my programming and data analysis knowledge, contributing to the company\'s growth.',
+                'Engenharia de Computação': 'Computer Engineering',
+                'Atendente': 'Attendant',
+                'Drogaria São Paulo (Grupo DPSP)': 'Drogarias São Paulo (DPSP Group)',
+                'Atendimento ao cliente, resolução de problemas e suporte em vendas.': 'Customer service, problem solving and sales support.',
+                'Web Scraping com Python': 'Web Scraping with Python',
+                'Desenvolvimento de scripts para extração de dados de websites': 'Development of scripts for website data extraction',
+                'Armazenamento de informações em SQLite': 'Information storage in SQLite',
+                'Bot de WhatsApp': 'WhatsApp Bot',
+                'Desenvolvimento de um bot utilizando Java e Spring Boot': 'Development of a bot using Java and Spring Boot',
+                'Automação de interações no WhatsApp': 'Automation of WhatsApp interactions',
+                'Capacidade de trabalhar em equipe e colaborar em projetos': 'Ability to work in teams and collaborate on projects',
+                'Habilidade em resolver problemas e pensar criticamente': 'Problem solving and critical thinking skills',
+                'Proatividade e vontade de aprender novas tecnologias': 'Proactivity and willingness to learn new technologies',
+                'Português': 'Portuguese',
+                'Nativo': 'Native',
+                'Inglês': 'English',
+                '[Nível de Proficiência]': '[Proficiency Level]',
+                'UNIVESP - Universidade Virtual do Estado de São Paulo':'UNIVESP - Virtual University of the State of São Paulo',
+                'Cursando atualmente: [periodo]º período': 'Currently studying: [periodo]th semester',
+                'Ainda não iniciou': 'Has not started yet',
+                'Faculdade concluída': 'University completed',
+            },
+            'en': {
+                'Objective': 'Objetivo',
+                'Education': 'Formação',
+                'Professional Experience': 'Experiência Profissional',
+                'Projects': 'Projetos',
+                'Skills': 'Habilidades',
+                'Qualifications': 'Qualificações',
+                'Languages': 'Idiomas',
+                'References available upon request': 'Referências disponíveis mediante solicitação',
+                'Internship in Computer Engineering, Development and Programming or Data Analysis, where I can apply my programming and data analysis knowledge, contributing to the company\'s growth.':'Estágio na área de Engenharia de Computação, Desenvolvimento e Programação ou Análise de Dados, onde posso aplicar meus conhecimentos em programação e análise de dados, contribuindo para o crescimento da empresa.', 
+                'Computer Engineering': 'Engenharia de Computação',
+                'Attendant': 'Atendente',
+                'Drogarias São Paulo (DPSP Group)': 'Drogaria São Paulo (Grupo DPSP)',
+                'Customer service, problem solving and sales support.': 'Atendimento ao cliente, resolução de problemas e suporte em vendas.',
+                'Web Scraping with Python': 'Web Scraping com Python',
+                'Development of scripts for website data extraction': 'Desenvolvimento de scripts para extração de dados de websites',
+                'Information storage in SQLite': 'Armazenamento de informações em SQLite',
+                'WhatsApp Bot': 'Bot de WhatsApp',
+                'Development of a bot using Java and Spring Boot': 'Desenvolvimento de um bot utilizando Java e Spring Boot',
+                'Automation of WhatsApp interactions': 'Automação de interações no WhatsApp',
+                'Ability to work in teams and collaborate on projects': 'Capacidade de trabalhar em equipe e colaborar em projetos',
+                'Problem solving and critical thinking skills': 'Habilidade em resolver problemas e pensar criticamente',
+                'Proactivity and willingness to learn new technologies': 'Proatividade e vontade de aprender novas tecnologias',
+                'Portuguese': 'Português',
+                'Native': 'Nativo',
+                'English': 'Inglês',
+                '[Proficiency Level]': '[Nível de Proficiência]',
+                'Estimated conclusion: [Ano de Conclusão]': 'Previsão: [Ano de Conclusão]',
+                'Since september 2024': 'Desde setembro de 2024',
+                'Currently studying: [periodo]th semester': 'Cursando atualmente: [periodo]º período',
+                'UNIVESP - Virtual University of the State of São Paulo':'UNIVESP - Universidade Virtual do Estado de São Paulo',
+                'Currently studying: [periodo]th semester': 'Cursando atualmente: [periodo]º período',
+                'Has not started yet': 'Ainda não iniciou',
+                'University completed': 'Faculdade concluída',
+            }
+        };
+
+        let currentLang = 'pt-BR';
+        langToggle.addEventListener('click', () => {
+            const newLang = currentLang === 'pt-BR' ? 'en' : 'pt-BR';
+            
+            // Find all text nodes in the document
+            const walker = document.createTreeWalker(
+                document.body,
+                NodeFilter.SHOW_TEXT,
+                null,
+                false
+            );
+            
+            const nodes = [];
+            while (walker.nextNode()) {
+                if (walker.currentNode.parentElement.tagName !== 'SCRIPT') {
+                    const text = walker.currentNode.nodeValue.trim();
+                    const possibleKeys = [
+                        ...Object.keys(translations['pt-BR']),
+                        ...Object.keys(translations['en'])
+                    ].filter(k => k !== '[Nível de Proficiência]');
+
+                    if (possibleKeys.some(key => text.includes(key) || text === key)) {
+                        nodes.push({
+                            node: walker.currentNode,
+                            text: text
+                        });
+                    }
+                }
+            }
+
+            // Update nodes with translations
+            nodes.forEach(({node, text}) => {
+                if (translations[currentLang][text]) {
+                    node.nodeValue = node.nodeValue.replace(text, translations[currentLang][text]);
+                }
+            });
+
+            currentLang = newLang;
+            langToggle.textContent = currentLang === 'pt-BR' ? 'EN' : 'PT';
+            document.getElementById('htmlLang').setAttribute('lang', currentLang);
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYear = new Date().getFullYear();
+            const dateElements = document.querySelectorAll('.date,.dateperiodo , footer p');
+            
+            dateElements.forEach(el => {
+                if (el.textContent.includes('[Ano de Conclusão]')) {
+                    el.textContent = el.textContent.replace('[Ano de Conclusão]', currentYear + 3);
+                }
+                if (el.textContent.includes('[periodo]')) {
+                    el.textContent = el.textContent.replace('[periodo]', funcGetPeriodo("2023-06-01"));
+                }
+            });
+            
+            function funcGetPeriodo(dataInicio){
+                langToggle.textContent = currentLang === 'pt-BR' ? 'EN' : 'PT';
+                document.getElementById('htmlLang').setAttribute('lang', currentLang);
+                
+                const inicio = new Date(dataInicio);
+                const hoje = new Date();
+                const diffMilissegundos = hoje - inicio;
+                const seisMesesMs = 6 * 30.44 * 24 * 60 * 60 * 1000;
+                const periodoAtual = Math.floor(diffMilissegundos / seisMesesMs) + 1;
+                if (periodoAtual > 10) {
+                    return currentLang === 'pt-BR' ? 'Faculdade concluída' : 'University completed';
+                } else if (periodoAtual < 1) {
+                    return currentLang === 'pt-BR' ? 'Ainda não iniciou' : 'Has not started yet';
+                } else if (periodoAtual >= 1 && periodoAtual <= 10){
+                    return currentLang === 'pt-BR' ? `Cursando atualmente: ${periodoAtual}º período` : `Currently studying: ${periodoAtual}th period`;
+                }
+            }
+            
+            const footer = document.querySelector('footer');
+            const dateParagraph = document.createElement('p');
+            dateParagraph.textContent = `Atualizado em ${new Date().toLocaleDateString('pt-BR')}`;
+            footer.prepend(dateParagraph);
+        });
+
+        document.getElementById('pdfDownload').addEventListener('click', () => {
+            const printableContent = document.querySelector('.container');
+            const opt = {
+                margin: 10,
+                filename: 'curriculo.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            
+            // Create PDF using html2pdf library
+            html2pdf().from(printableContent).set(opt).save();
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</body>
+</html>
