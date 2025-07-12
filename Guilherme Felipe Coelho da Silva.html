@@ -568,17 +568,18 @@
         });
 
         document.getElementById('pdfDownload').addEventListener('click', () => {
-            const printableContent = document.querySelector('.container');
-            const opt = {
-                margin: 10,
-                filename: 'curriculo.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-            
-            // Create PDF using html2pdf library
-            html2pdf().from(printableContent).set(opt).save();
+            window.scrollTo(0, 0);
+            setTimeout(() => {
+                const printableContent = document.querySelector('.container');
+                const opt = {
+                    margin: 10,
+                    filename: 'curriculo.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2, scrollY: 0 }, // adiciona scrollY: 0
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                };
+                html2pdf().from(printableContent).set(opt).save();
+            }, 300);
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
