@@ -492,7 +492,6 @@
         langToggle.addEventListener('click', () => {
             const newLang = currentLang === 'pt-BR' ? 'en' : 'pt-BR';
             
-            // Find all text nodes in the document
             const walker = document.createTreeWalker(
                 document.body,
                 NodeFilter.SHOW_TEXT,
@@ -518,7 +517,6 @@
                 }
             }
 
-            // Update nodes with translations
             nodes.forEach(({node, text}) => {
                 if (translations[currentLang][text]) {
                     node.nodeValue = node.nodeValue.replace(text, translations[currentLang][text]);
@@ -575,7 +573,7 @@
                     margin: 10,
                     filename: 'curriculo.pdf',
                     image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { scale: 2, scrollY: 0 }, // adiciona scrollY: 0
+                    html2canvas: { scale: 2, scrollY: 0 },
                     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
                 };
                 html2pdf().from(printableContent).set(opt).save();
