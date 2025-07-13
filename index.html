@@ -537,7 +537,8 @@
                     el.textContent = el.textContent.replace('[Ano de Conclusão]', currentYear + 3);
                 }
                 if (el.textContent.includes('[periodo]')) {
-                    el.textContent = el.textContent.replace('[periodo]', funcGetPeriodo("2023-06-01"));
+                    const periodoFunc = funcGetPeriodo("2023-06-01");
+                    el.textContent = el.textContent.replace('[periodo]', periodoFunc);
                 }
             });
             
@@ -555,7 +556,8 @@
                 } else if (periodoAtual < 1) {
                     return currentLang === 'pt-BR' ? 'Ainda não iniciou' : 'Has not started yet';
                 } else if (periodoAtual >= 1 && periodoAtual <= 10){
-                    return currentLang === 'pt-BR' ? `Cursando atualmente: ${periodoAtual}º período` : `Currently studying: ${periodoAtual}th period`;
+                    retornoVar = currentLang === 'pt-BR' ? `Cursando atualmente: ${periodoAtual}º período` : `Currently studying: ${periodoAtual}th period`;
+                    return retornoVar;
                 }
             }
             
