@@ -596,6 +596,18 @@
 
         document.getElementById('pdfDownload').addEventListener('click', () => {
             window.scrollTo(0, 0);
+            
+            const container = document.querySelector('.container');
+            const originalPosition = container.style.position;
+            const originalTop = container.style.top;
+            const originalLeft = container.style.left;
+            const originalRight = container.style.right;
+
+            container.style.position = 'static';
+            container.style.top = '';
+            container.style.left = '';
+            container.style.right = '';
+            
             setTimeout(() => {
                 const printableContent = document.querySelector('.container');
                 const opt = {
@@ -605,7 +617,13 @@
                     html2canvas: { scale: 2, scrollY: 0 },
                     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
                 };
-                html2pdf().from(printableContent).set(opt).save();
+            
+            html2pdf().from(container).set(opt).save().then(() => {
+                container.style.position = originalPosition;
+                container.style.top = originalTop;
+                container.style.left = originalLeft;
+                container.style.right = originalRight;
+                });
             }, 300);
         });
     </script>
