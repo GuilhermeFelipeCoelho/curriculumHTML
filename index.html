@@ -18,7 +18,6 @@
             --header-text: white;
         }
 
-        /* Dark mode variables */
         [data-theme="dark"] {
             --primary: #3498db;
             --secondary: #2c3e50;
@@ -32,10 +31,11 @@
 
         .theme-toggle-container {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 10px;
+            right: 10px;
             display: flex;
             gap: 10px;
+            z-index: 3;            
         }
 
         .theme-toggle-btn {
@@ -51,7 +51,6 @@
         .theme-toggle-btn:hover {
             opacity: 0.9;
         }
-        /**/
         
         * {
             margin: 0;
@@ -68,6 +67,10 @@
         }
         
         .container {
+            left: 1%;
+            right: 1%;
+            top: 50px;
+            position: absolute;
             max-width: 800px;
             margin: 0 auto;
             background-color: var(--container-bg);
@@ -80,8 +83,9 @@
             background-color: var(--header-bg);
             color: var(--header-text);
             position: relative;
-            padding: 30px;
+            padding: 10px;
             text-align: center;
+            z-index: 2;
         }
         
         h1 {
@@ -121,8 +125,9 @@
 
         .export-container {
             position: fixed;
-            top: 20px;
-            left: 20px;
+            top: 10px;
+            left: 10px;
+            z-index: 3;
         }
 
         .control-btn {
@@ -316,8 +321,8 @@
                 <a href="https://wa.me/5512982768599?text=Oi%20Guilherme!%20Vi%20seu%20currículo%20online!%20"
                    target="_blank"
                    class="telefone">+55 (12) 98276-8599</a>
-                <a href="https://www.linkedin.com/in/guilherme-felipe-coelho/" target="_blank">Meu LinkedIn!</a>
-                <a href="https://github.com/GuilhermeFelipeCoelho" target="_blank">Meu GitHub!</a>
+                <a href="https://www.linkedin.com/in/guilherme-felipe-coelho/" target="_blank">LinkedIn!</a>
+                <a href="https://github.com/GuilhermeFelipeCoelho" target="_blank">GitHub!</a>
             </div>
         </header>
         
