@@ -393,6 +393,7 @@
         <div class="header-acima">
             <div class="export-container">
                 <button class="theme-toggle-btn" id="pdfDownload">PDF</button>
+                <button class="theme-toggle-btn" id="downloadArquivo">Baixar curriculo</button>
             </div>
             <div class="theme-toggle-container">
                 <button class="theme-toggle-btn" id="langToggle">EN</button>
@@ -604,7 +605,8 @@
                 'Cursando atualmente: 7º período': 'Currently studying: 7th semester',
                 'Cursando atualmente: 8º período': 'Currently studying: 8th semester',
                 'Cursando atualmente: 9º período': 'Currently studying: 9th semester',
-                'Cursando atualmente: 10º período': 'Currently studying: 10th semester'
+                'Cursando atualmente: 10º período': 'Currently studying: 10th semester',
+                'Baixar curriculo': 'Download resume'
             },
             'en': {
                 'Objective': 'Objetivo',
@@ -656,7 +658,8 @@
                 'Currently studying: 7th semester': 'Cursando atualmente: 7º período',
                 'Currently studying: 8th semester': 'Cursando atualmente: 8º período',
                 'Currently studying: 9th semester': 'Cursando atualmente: 9º período',
-                'Currently studying: 10th semester': 'Cursando atualmente: 10º período'
+                'Currently studying: 10th semester': 'Cursando atualmente: 10º período',
+                'Download resume': 'Baixar curriculo'
             }
         };
 
@@ -751,6 +754,8 @@
             const originalTop = container.style.top;
             const originalLeft = container.style.left;
             const originalRight = container.style.right;
+            const toggleButtons = document.querySelectorAll('.theme-toggle-btn');
+            toggleButtons.forEach(btn => btn.style.display = 'none');
 
             container.style.position = 'static';
             container.style.top = '';
@@ -772,6 +777,7 @@
                     container.style.top = originalTop;
                     container.style.left = originalLeft;
                     container.style.right = originalRight;
+                    toggleButtons.forEach(btn => btn.style.display = '');
                 });
             }, 300);
         });
