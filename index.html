@@ -560,6 +560,12 @@
         };
 
         let currentLang = 'pt-BR';
+
+        const footer = document.querySelector('footer');
+        const dateParagraph = document.createElement('p');
+        dateParagraph.textContent = `Atualizado em ${new Date().toLocaleDateString('pt-BR')}`;
+        footer.prepend(dateParagraph);
+
         langToggle.addEventListener('click', () => {
             const newLang = currentLang === 'pt-BR' ? 'en' : 'pt-BR';
             
@@ -597,6 +603,10 @@
             currentLang = newLang;
             langToggle.textContent = currentLang === 'pt-BR' ? 'EN' : 'PT';
             document.getElementById('htmlLang').setAttribute('lang', currentLang);
+
+            const footer = document.querySelector('footer');
+            dateParagraph.textContent = currentLang === 'pt-BR' ? `Atualizado em ${new Date().toLocaleDateString('pt-BR')}` : `Updated at ${new Date().toLocaleDateString('en')}`;
+            footer.prepend(dateParagraph);
         });
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -631,11 +641,6 @@
                     return retornoVar;
                 }
             }
-            
-            const footer = document.querySelector('footer');
-            const dateParagraph = document.createElement('p');
-            dateParagraph.textContent = `Atualizado em ${new Date().toLocaleDateString('pt-BR')}`;
-            footer.prepend(dateParagraph);
         });
 
         document.getElementById('pdfDownload').addEventListener('click', () => {
