@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html id="htmlLang" lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currículo - Guilherme Felipe Coelho da Silva - Engenharia de Computação</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
             --primary: #2c3e50;
@@ -35,7 +37,7 @@
             right: 10px;
             display: flex;
             gap: 10px;
-            z-index: 3;            
+            z-index: 3;
         }
 
         .theme-toggle-btn {
@@ -51,21 +53,21 @@
         .theme-toggle-btn:hover {
             opacity: 0.9;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
             background-color: var(--bg-color);
             color: var(--text);
             line-height: 1.6;
             padding: 20px;
         }
-        
+
         .container {
             left: 1%;
             right: 1%;
@@ -74,11 +76,11 @@
             max-width: 800px;
             margin: 0 auto;
             background-color: var(--container-bg);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             overflow: hidden;
         }
-        
+
         header {
             background-color: var(--header-bg);
             color: var(--header-text);
@@ -87,12 +89,12 @@
             text-align: center;
             z-index: 2;
         }
-        
+
         h1 {
             font-size: 2.2rem;
             margin-bottom: 10px;
         }
-        
+
         .contact-info {
             display: flex;
             flex-wrap: wrap;
@@ -101,29 +103,28 @@
             margin-top: 15px;
             font-size: 0.9rem;
         }
-        
+
         .contact-info a {
             color: white;
             text-decoration: none;
             transition: color 0.3s;
         }
 
-        .experiencias{
+        .experiencias {
             color: var(--dark);
             border-style: none;
             margin-top: 0.2em;
-            font-size: 22px;
             font-size: 18px;
         }
 
-        .contact-info .telefone:hover{
+        .contact-info .telefone:hover {
             color: #1abc58;
         }
-        
+
         .contact-info a:hover {
             color: var(--secondary);
         }
-        
+
         .header-controls {
             display: flex;
             justify-content: flex-end;
@@ -159,11 +160,11 @@
             padding: 25px;
             border-bottom: 1px solid #eee;
         }
-        
+
         section:last-child {
             border-bottom: none;
         }
-        
+
         h2 {
             color: var(--primary);
             font-size: 1.5rem;
@@ -171,34 +172,35 @@
             padding-bottom: 5px;
             border-bottom: 2px solid var(--secondary);
         }
-        
+
         h3 {
             font-size: 1.2rem;
             margin-bottom: 5px;
             color: var(--dark);
         }
 
-        .header-acima{
+        .header-acima {
             color: var(--header-bg);
         }
-        
-        .job-title, .degree {
+
+        .job-title,
+        .degree {
             display: flex;
             justify-content: space-between;
             margin-bottom: 5px;
         }
-       
+
         .dateperiodo {
             color: var(--text);
         }
-        
+
         .date {
             color: #7f8c8d;
             font-style: italic;
             list-style: none;
         }
 
-        .funcao{
+        .funcao {
             margin-top: -1em;
         }
 
@@ -209,55 +211,55 @@
         }
 
 
-        .projectbutton{
+        .projectbutton {
             color: var(--primary);
             text-decoration: none;
             transition: color 0.3s;
             margin-right: 1.5em;
         }
 
-        .projectbutton:hover{
+        .projectbutton:hover {
             color: var(--secondary)
         }
 
         ul {
             padding-left: 20px;
         }
-        
+
         li {
             margin-bottom: 8px;
         }
-        
+
         .skills-container {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             margin-top: 15px;
         }
-        
+
         .skill-tag {
             background-color: var(--bg-color);
             padding: 5px 10px;
             border-radius: 20px;
             font-size: 0.85rem;
         }
-        
+
         .projects-list {
             display: grid;
             gap: 15px;
         }
-        
+
         .project-item {
             background-color: var(--bg-color);
             padding: 15px;
             border-radius: 5px;
         }
-        
+
         .project-item h4 {
             color: var(--primary);
             margin-bottom: 5px;
         }
-        
+
         footer {
             text-align: center;
             padding: 20px;
@@ -273,83 +275,153 @@
             --text: #ecf0f1;
             background-color: #2c3e50;
         }
-        
+
         body.dark-theme .container {
             background-color: var(--primary);
             color: var(--text);
         }
-        
+
         body.dark-theme .project-item {
             background-color: #3d566e;
         }
 
-        .exp-box{
+        .exp-box {
             background-color: var(--bg-color);
             padding: 15px;
             border-radius: 5px;
         }
-        
+
+        .header-boxes {
+            display: flex;
+            justify-content: center;
+        }
+
+        .svgheader {
+            width: 1.5em;
+            margin-right: .3em;
+        }
+
+        .info-container {
+            background-color: var(--header-bg);
+            display: flex;
+            justify-content: space-around;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-item {
+            background-color: var(--header-bg);
+            text-align: center;
+        }
+
+        .info-item strong {
+            background-color: var(--header-bg);
+            display: block;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
         @media print {
             body {
                 padding: 0;
                 background-color: white;
             }
-            
+
             .container {
                 box-shadow: none;
                 border-radius: 0;
             }
         }
-        
+
         @media (max-width: 600px) {
             header {
                 padding: 20px;
             }
-            
+
             h1 {
                 font-size: 1.8rem;
             }
-            
+
             .contact-info {
                 flex-direction: column;
                 align-items: center;
                 gap: 5px;
             }
-            
+
             section {
                 padding: 15px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header-acima">
-                <div class="export-container">
-                    <button class="theme-toggle-btn" id="pdfDownload">PDF</button>
-                </div>
-                <div class="theme-toggle-container">
-                    <button class="theme-toggle-btn" id="langToggle">EN</button>
-                    <button class="theme-toggle-btn" id="themeToggle">🌙</button>
-                </div>
+            <div class="export-container">
+                <button class="theme-toggle-btn" id="pdfDownload">PDF</button>
             </div>
+            <div class="theme-toggle-container">
+                <button class="theme-toggle-btn" id="langToggle">EN</button>
+                <button class="theme-toggle-btn" id="themeToggle">🌙</button>
+            </div>
+        </div>
         <header>
             <h1>Guilherme Felipe Coelho da Silva</h1>
             <div class="contact-info">
-                <span>glipecoelho2@gmail.com</span>
+                <!-- <span>glipecoelho2@gmail.com</span>
                 <a href="https://wa.me/5512982768599?text=Oi%20Guilherme!%20Vi%20seu%20currículo%20online!%20"
                    target="_blank"
                    class="telefone">+55 (12) 98276-8599</a>
                 <a href="https://www.linkedin.com/in/guilherme-felipe-coelho/" target="_blank">LinkedIn!</a>
-                <a href="https://github.com/GuilhermeFelipeCoelho" target="_blank">GitHub!</a>
+                <a href="https://github.com/GuilhermeFelipeCoelho" target="_blank">GitHub!</a> -->
+                <span>
+                    <a href="glipecoelho2@gmail.com" target="_blank">
+                        <i class="fas fa-envelope fa-2x"></i>
+                    </a>
+                </span>
+                <a href="https://wa.me/5512982768599?text=Oi%20Guilherme!%20Vi%20seu%20currículo%20online!%20"
+                    target="_blank" class="telefone">
+                    <i class="fab fa-whatsapp fa-2x"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/guilherme-felipe-coelho/" target="_blank">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://github.com/GuilhermeFelipeCoelho" target="_blank">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
             </div>
         </header>
-        
+
+        <div class="info-container">
+            <div class="info-item">
+                <strong>E-mail:</strong>
+                glipecoelho2@gmail.com
+            </div>
+            <div class="info-item">
+                <strong>Telefone:</strong>
+                +55 12 98276-8599
+            </div>
+            <div class="info-item">
+                <strong>LinkedIn:</strong>
+                <a href="https://www.linkedin.com/in/guilherme-felipe-coelho/" target="_blank">Guilherme Felipe
+                    Coelho</a>
+            </div>
+            <div class="info-item">
+                <strong>GitHub:</strong>
+                <a href="https://github.com/GuilhermeFelipeCoelho" target="_blank">GuilhermeFelipeCoelho</a>
+            </div>
+        </div>
+
         <section id="objective">
             <h2>Objetivo</h2>
-            <p>Estágio na área de Engenharia de Computação, Desenvolvimento e Programação ou Análise de Dados, onde posso aplicar meus conhecimentos em programação e análise de dados, contribuindo para o crescimento da empresa.</p>
+            <p>Estágio na área de Engenharia de Computação, Desenvolvimento e Programação ou Análise de Dados, onde
+                posso aplicar meus conhecimentos em programação e análise de dados, contribuindo para o crescimento da
+                empresa.</p>
         </section>
-        
+
         <section id="education">
             <h2>Formação</h2>
             <div class="exp-box">
@@ -361,7 +433,7 @@
                 <p class="dateperiodo">[periodo]</p>
             </div>
         </section>
-        
+
         <section id="experience">
             <h2>Experiência Profissional</h2>
             <div class="exp-box">
@@ -380,35 +452,37 @@
                 </ul>
             </div>
         </section>
-        
+
         <section id="projects">
             <h2>Projetos</h2>
             <div class="projects-list">
                 <div class="project-item">
-                    <h4 class="titulo-projeto">Web Scraping com Python 
-                        <a href="https://github.com/GuilhermeFelipeCoelho/Python-Price-Checker" 
-                        target="_blank" 
-                        class="projectbutton">Clique e veja!</a></h4>
+                    <h4 class="titulo-projeto">Web Scraping com Python
+                        <a href="https://github.com/GuilhermeFelipeCoelho/Python-Price-Checker" target="_blank"
+                            class="projectbutton">Clique e veja!</a>
+                    </h4>
                     <ul>
                         <li>Desenvolvimento de scripts para extração de dados de websites</li>
                         <li>Armazenamento de informações em SQLite</li>
-                        <li>Lista de valores atualizados quando o programa é executado e registrado para acompanhamento de variação</li>
+                        <li>Lista de valores atualizados quando o programa é executado e registrado para acompanhamento
+                            de variação</li>
                     </ul>
                 </div>
                 <div class="project-item">
-                    <h4 class="titulo-projeto">WhatsApp Expense Tracker Bot 
-                        <a href="https://github.com/GuilhermeFelipeCoelho/Expenses-Tracker---Whatsapp-Bot-Java" 
-                        target="_blank" 
-                        class="projectbutton">Clique e veja!</a></h4>
+                    <h4 class="titulo-projeto">WhatsApp Expense Tracker Bot
+                        <a href="https://github.com/GuilhermeFelipeCoelho/Expenses-Tracker---Whatsapp-Bot-Java"
+                            target="_blank" class="projectbutton">Clique e veja!</a>
+                    </h4>
                     <ul>
                         <li>Desenvolvimento de um bot utilizando Java e Spring Boot</li>
                         <li>Facilidade de registros e controle de gastos </li>
-                        <li>Armazenamento de dados para comparação e controle de gastos de acordo com as preferências do usuário</li>
+                        <li>Armazenamento de dados para comparação e controle de gastos de acordo com as preferências do
+                            usuário</li>
                     </ul>
                 </div>
             </div>
         </section>
-        
+
         <section id="skills">
             <h2>Habilidades</h2>
             <div class="skills-container">
@@ -425,7 +499,7 @@
                 <span class="skill-tag">Power BI</span>
             </div>
         </section>
-        
+
         <section id="qualifications">
             <h2>Qualificações</h2>
             <ul>
@@ -434,7 +508,7 @@
                 <li>Proatividade e vontade de aprender novas tecnologias</li>
             </ul>
         </section>
-        
+
         <section id="languages">
             <h2>Idiomas</h2>
             <ul>
@@ -442,7 +516,7 @@
                 <li>Inglês: Intermediário</li>
             </ul>
         </section>
-        
+
         <footer>
             <p>Referências disponíveis mediante solicitação</p>
         </footer>
@@ -451,7 +525,7 @@
     <script>
         const themeToggle = document.getElementById('themeToggle');
         themeToggle.addEventListener('click', () => {
-            document.body.dataset.theme = 
+            document.body.dataset.theme =
                 document.body.dataset.theme === 'dark' ? 'light' : 'dark';
             themeToggle.textContent = document.body.dataset.theme === 'dark' ? '☀️' : '🌙';
         });
@@ -480,32 +554,32 @@
                 'Capacidade de trabalhar em equipe e colaborar em projetos': 'Ability to work in teams and collaborate on projects',
                 'Habilidade em resolver problemas e pensar criticamente': 'Problem solving and critical thinking skills',
                 'Proatividade e vontade de aprender novas tecnologias': 'Proactivity and willingness to learn new technologies',
-                'UNIVESP - Universidade Virtual do Estado de São Paulo':'UNIVESP - Virtual University of the State of São Paulo',
+                'UNIVESP - Universidade Virtual do Estado de São Paulo': 'UNIVESP - Virtual University of the State of São Paulo',
                 'Ainda não iniciou': 'Has not started yet',
                 'Faculdade concluída': 'University completed',
                 'Previsão de conclusão: 2028': 'Estimated completion date: 2028',
-                'Lista de valores atualizados quando o programa é executado e registrado para acompanhamento de variação':'List of values updated when the program is run and recorded for tracking variation',
-                'Facilidade de registros e controle de gastos':'Ease of recording and controlling expenses',
-                'Armazenamento de dados para comparação e controle de gastos de acordo com as preferências do usuário':'Data storage for comparison and expense control according to user preferences',
-                'Bancos de Dados Relacionais':'Relational Databases',
-                'Português: Nativo':'Portuguese: Native',
-                'Inglês: Intermediário':'English: Intermediate',
-                'Clique e veja!':'Click and see!',
-                'Início: setembro de 2024':'Start: September 2024',
-                'Fim: Atualmente neste cargo':'End: Currently in this position',
-                'Atendimento ao cliente':'Customer service',
-                'Resolução de problemas':'Troubleshooting',
-                'Reposição de loja e organização de estoque':'Store replenishment and stock organization',
-                'Cursando atualmente: 1º período':'Currently studying: 1st semester',
-                'Cursando atualmente: 2º período':'Currently studying: 2nd semester',
-                'Cursando atualmente: 3º período':'Currently studying: 3rd semester',
-                'Cursando atualmente: 4º período':'Currently studying: 4th semester',
-                'Cursando atualmente: 5º período':'Currently studying: 5th semester',
-                'Cursando atualmente: 6º período':'Currently studying: 6th semester',
-                'Cursando atualmente: 7º período':'Currently studying: 7th semester',
-                'Cursando atualmente: 8º período':'Currently studying: 8th semester',
-                'Cursando atualmente: 9º período':'Currently studying: 9th semester',
-                'Cursando atualmente: 10º período':'Currently studying: 10th semester'
+                'Lista de valores atualizados quando o programa é executado e registrado para acompanhamento de variação': 'List of values updated when the program is run and recorded for tracking variation',
+                'Facilidade de registros e controle de gastos': 'Ease of recording and controlling expenses',
+                'Armazenamento de dados para comparação e controle de gastos de acordo com as preferências do usuário': 'Data storage for comparison and expense control according to user preferences',
+                'Bancos de Dados Relacionais': 'Relational Databases',
+                'Português: Nativo': 'Portuguese: Native',
+                'Inglês: Intermediário': 'English: Intermediate',
+                'Clique e veja!': 'Click and see!',
+                'Início: setembro de 2024': 'Start: September 2024',
+                'Fim: Atualmente neste cargo': 'End: Currently in this position',
+                'Atendimento ao cliente': 'Customer service',
+                'Resolução de problemas': 'Troubleshooting',
+                'Reposição de loja e organização de estoque': 'Store replenishment and stock organization',
+                'Cursando atualmente: 1º período': 'Currently studying: 1st semester',
+                'Cursando atualmente: 2º período': 'Currently studying: 2nd semester',
+                'Cursando atualmente: 3º período': 'Currently studying: 3rd semester',
+                'Cursando atualmente: 4º período': 'Currently studying: 4th semester',
+                'Cursando atualmente: 5º período': 'Currently studying: 5th semester',
+                'Cursando atualmente: 6º período': 'Currently studying: 6th semester',
+                'Cursando atualmente: 7º período': 'Currently studying: 7th semester',
+                'Cursando atualmente: 8º período': 'Currently studying: 8th semester',
+                'Cursando atualmente: 9º período': 'Currently studying: 9th semester',
+                'Cursando atualmente: 10º período': 'Currently studying: 10th semester'
             },
             'en': {
                 'Objective': 'Objetivo',
@@ -516,7 +590,7 @@
                 'Qualifications': 'Qualificações',
                 'Languages': 'Idiomas',
                 'References available upon request': 'Referências disponíveis mediante solicitação',
-                'Internship in Computer Engineering, Development and Programming or Data Analysis, where I can apply my programming and data analysis knowledge, contributing to the company\'s growth.':'Estágio na área de Engenharia de Computação, Desenvolvimento e Programação ou Análise de Dados, onde posso aplicar meus conhecimentos em programação e análise de dados, contribuindo para o crescimento da empresa.', 
+                'Internship in Computer Engineering, Development and Programming or Data Analysis, where I can apply my programming and data analysis knowledge, contributing to the company\'s growth.': 'Estágio na área de Engenharia de Computação, Desenvolvimento e Programação ou Análise de Dados, onde posso aplicar meus conhecimentos em programação e análise de dados, contribuindo para o crescimento da empresa.',
                 'Computer Engineering': 'Engenharia de Computação',
                 'Attendant': 'Atendente',
                 'Drogarias São Paulo (DPSP Group)': 'Drogaria São Paulo (Grupo DPSP)',
@@ -532,32 +606,32 @@
                 'Estimated conclusion: [Ano de Conclusão]': 'Previsão: [Ano de Conclusão]',
                 'Since september 2024': 'Desde setembro de 2024',
                 'Currently studying: [periodo]th semester': 'Cursando atualmente: [periodo]º período',
-                'UNIVESP - Virtual University of the State of São Paulo':'UNIVESP - Universidade Virtual do Estado de São Paulo',
+                'UNIVESP - Virtual University of the State of São Paulo': 'UNIVESP - Universidade Virtual do Estado de São Paulo',
                 'Has not started yet': 'Ainda não iniciou',
                 'University completed': 'Faculdade concluída',
-                'Estimated completion date: 2028':'Previsão de conclusão: 2028',
-                'List of values updated when the program is run and recorded for tracking variation':'Lista de valores atualizados quando o programa é executado e registrado para acompanhamento de variação',
-                'Ease of recording and controlling expenses':'Facilidade de registros e controle de gastos',
-                'Data storage for comparison and expense control according to user preferences':'Armazenamento de dados para comparação e controle de gastos de acordo com as preferências do usuário',
-                'Relational Databases':'Bancos de Dados Relacionais',
-                'Portuguese: Native':'Português: Nativo',
-                'English: Intermediate':'Inglês: Intermediário',
-                'Click and see!':'Clique e veja!',
-                'Start: September 2024':'Início: setembro de 2024',
-                'End: Currently in this position':'Fim: Atualmente neste cargo',
-                'Customer service':'Atendimento ao cliente',
-                'Troubleshooting':'Resolução de problemas',
-                'Store replenishment and stock organization':'Reposição de loja e organização de estoque',
-                'Currently studying: 1st semester':'Cursando atualmente: 1º período',
-                'Currently studying: 2nd semester':'Cursando atualmente: 2º período',
-                'Currently studying: 3rd semester':'Cursando atualmente: 3º período',
-                'Currently studying: 4th semester':'Cursando atualmente: 4º período',
-                'Currently studying: 5th semester':'Cursando atualmente: 5º período',
-                'Currently studying: 6th semester':'Cursando atualmente: 6º período',
-                'Currently studying: 7th semester':'Cursando atualmente: 7º período',
-                'Currently studying: 8th semester':'Cursando atualmente: 8º período',
-                'Currently studying: 9th semester':'Cursando atualmente: 9º período',
-                'Currently studying: 10th semester':'Cursando atualmente: 10º período'
+                'Estimated completion date: 2028': 'Previsão de conclusão: 2028',
+                'List of values updated when the program is run and recorded for tracking variation': 'Lista de valores atualizados quando o programa é executado e registrado para acompanhamento de variação',
+                'Ease of recording and controlling expenses': 'Facilidade de registros e controle de gastos',
+                'Data storage for comparison and expense control according to user preferences': 'Armazenamento de dados para comparação e controle de gastos de acordo com as preferências do usuário',
+                'Relational Databases': 'Bancos de Dados Relacionais',
+                'Portuguese: Native': 'Português: Nativo',
+                'English: Intermediate': 'Inglês: Intermediário',
+                'Click and see!': 'Clique e veja!',
+                'Start: September 2024': 'Início: setembro de 2024',
+                'End: Currently in this position': 'Fim: Atualmente neste cargo',
+                'Customer service': 'Atendimento ao cliente',
+                'Troubleshooting': 'Resolução de problemas',
+                'Store replenishment and stock organization': 'Reposição de loja e organização de estoque',
+                'Currently studying: 1st semester': 'Cursando atualmente: 1º período',
+                'Currently studying: 2nd semester': 'Cursando atualmente: 2º período',
+                'Currently studying: 3rd semester': 'Cursando atualmente: 3º período',
+                'Currently studying: 4th semester': 'Cursando atualmente: 4º período',
+                'Currently studying: 5th semester': 'Cursando atualmente: 5º período',
+                'Currently studying: 6th semester': 'Cursando atualmente: 6º período',
+                'Currently studying: 7th semester': 'Cursando atualmente: 7º período',
+                'Currently studying: 8th semester': 'Cursando atualmente: 8º período',
+                'Currently studying: 9th semester': 'Cursando atualmente: 9º período',
+                'Currently studying: 10th semester': 'Cursando atualmente: 10º período'
             }
         };
 
@@ -570,14 +644,14 @@
 
         langToggle.addEventListener('click', () => {
             const newLang = currentLang === 'pt-BR' ? 'en' : 'pt-BR';
-            
+
             const walker = document.createTreeWalker(
                 document.body,
                 NodeFilter.SHOW_TEXT,
                 null,
                 false
             );
-            
+
             const nodes = [];
             while (walker.nextNode()) {
                 if (walker.currentNode.parentElement.tagName !== 'SCRIPT') {
@@ -596,7 +670,7 @@
                 }
             }
 
-            nodes.forEach(({node, text}) => {
+            nodes.forEach(({ node, text }) => {
                 if (translations[currentLang][text]) {
                     node.nodeValue = node.nodeValue.replace(text, translations[currentLang][text]);
                 }
@@ -611,10 +685,10 @@
             footer.prepend(dateParagraph);
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const currentYear = new Date().getFullYear();
             const dateElements = document.querySelectorAll('.date,.dateperiodo , footer p');
-            
+
             dateElements.forEach(el => {
                 if (el.textContent.includes('[Ano de Conclusão]')) {
                     el.textContent = el.textContent.replace('[Ano de Conclusão]', currentYear + 3);
@@ -624,11 +698,10 @@
                     el.textContent = el.textContent.replace('[periodo]', periodoFunc);
                 }
             });
-            
-            function funcGetPeriodo(dataInicio){
-                langToggle.textContent = currentLang === 'pt-BR' ? 'EN' : 'PT';
+
+            function funcGetPeriodo(dataInicio) {
                 document.getElementById('htmlLang').setAttribute('lang', currentLang);
-                
+
                 const inicio = new Date(dataInicio);
                 const hoje = new Date();
                 const diffMilissegundos = hoje - inicio;
@@ -638,7 +711,7 @@
                     return currentLang === 'pt-BR' ? 'Faculdade concluída' : 'University completed';
                 } else if (periodoAtual < 1) {
                     return currentLang === 'pt-BR' ? 'Ainda não iniciou' : 'Has not started yet';
-                } else if (periodoAtual >= 1 && periodoAtual <= 10){
+                } else if (periodoAtual >= 1 && periodoAtual <= 10) {
                     retornoVar = currentLang === 'pt-BR' ? `Cursando atualmente: ${periodoAtual}º período` : `Currently studying: ${periodoAtual}th period`;
                     return retornoVar;
                 }
@@ -647,7 +720,7 @@
 
         document.getElementById('pdfDownload').addEventListener('click', () => {
             window.scrollTo(0, 0);
-            
+
             const container = document.querySelector('.container');
             const originalPosition = container.style.position;
             const originalTop = container.style.top;
@@ -658,7 +731,7 @@
             container.style.top = '';
             container.style.left = '';
             container.style.right = '';
-            
+
             setTimeout(() => {
                 const printableContent = document.querySelector('.container');
                 const opt = {
@@ -668,16 +741,17 @@
                     html2canvas: { scale: 2, scrollY: 0 },
                     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
                 };
-            
-            html2pdf().from(container).set(opt).save().then(() => {
-                container.style.position = originalPosition;
-                container.style.top = originalTop;
-                container.style.left = originalLeft;
-                container.style.right = originalRight;
+
+                html2pdf().from(container).set(opt).save().then(() => {
+                    container.style.position = originalPosition;
+                    container.style.top = originalTop;
+                    container.style.left = originalLeft;
+                    container.style.right = originalRight;
                 });
             }, 300);
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </body>
+
 </html>
