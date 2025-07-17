@@ -781,6 +781,20 @@
                 });
             }, 300);
         });
+
+        function baixarArquivo(caminho, nomeDoArquivo = null) {
+            const link = document.createElement('a');
+            link.href = caminho;
+            if (nomeDoArquivo) {
+                link.download = nomeDoArquivo;
+            } else {
+                link.download = caminho.split('/').pop();
+            }
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </body>
