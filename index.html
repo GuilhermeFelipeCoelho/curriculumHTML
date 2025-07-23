@@ -348,6 +348,10 @@
             transition: color 0.3s
         }
 
+        .legenda{
+            font-size: .8em;
+        }
+
         @media print {
             body {
                 padding: 0;
@@ -381,8 +385,17 @@
         }
 
         @media (max-width: 600px) {
-            .contact-info {
-                display: none;
+            .info-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10%;
+            }
+            .contact-info{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10%;
             }
         }
     </style>
@@ -483,7 +496,7 @@
             <h2>Projetos</h2>
             <div class="projects-list">
                 <div class="project-item">
-                    <h4 class="titulo-projeto">Web Scraping com Python
+                    <h4 class="titulo-projeto">Web Scraping com Python - |🔴|
                         <a href="https://github.com/GuilhermeFelipeCoelho/Python-Price-Checker" target="_blank"
                             class="projectbutton">Clique e veja!</a>
                     </h4>
@@ -495,7 +508,7 @@
                     </ul>
                 </div>
                 <div class="project-item">
-                    <h4 class="titulo-projeto">WhatsApp Expense Tracker Bot
+                    <h4 class="titulo-projeto">WhatsApp Expense Tracker Bot - |🟡|
                         <a href="https://github.com/GuilhermeFelipeCoelho/Expenses-Tracker---Whatsapp-Bot-Java"
                             target="_blank" class="projectbutton">Clique e veja!</a>
                     </h4>
@@ -505,6 +518,10 @@
                         <li>Armazenamento de dados para comparação e controle de gastos de acordo com as preferências do
                             usuário</li>
                     </ul>
+                </div>
+                <div class="legenda">
+                    <p>Legenda:</p>
+                    <p>🟢 = Finalizado | 🟡 = Trabalhando | 🔴 = Aguardando</p>
                 </div>
             </div>
         </section>
@@ -606,7 +623,9 @@
                 'Cursando atualmente: 8º período': 'Currently studying: 8th semester',
                 'Cursando atualmente: 9º período': 'Currently studying: 9th semester',
                 'Cursando atualmente: 10º período': 'Currently studying: 10th semester',
-                'Baixar curriculo': 'Download resume'
+                'Baixar curriculo': 'Download resume',
+                '🟢 = Finalizado | 🟡 = Trabalhando | 🔴 = Aguardando':'🟢 = Finished | 🟡 = Working On | 🔴 = On Hold',
+                'Legenda:':'Caption:'
             },
             'en': {
                 'Objective': 'Objetivo',
@@ -659,7 +678,9 @@
                 'Currently studying: 8th semester': 'Cursando atualmente: 8º período',
                 'Currently studying: 9th semester': 'Cursando atualmente: 9º período',
                 'Currently studying: 10th semester': 'Cursando atualmente: 10º período',
-                'Download resume': 'Baixar curriculo'
+                'Download resume': 'Baixar curriculo',             '':'',
+                '🟢 = Finished | 🟡 = Working On | 🔴 = On Hold':'🟢 = Finalizado | 🟡 = Trabalhando | 🔴 = Aguardando',
+                'Caption:':'Legenda:'
             }
         };
 
