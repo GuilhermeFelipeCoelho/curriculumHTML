@@ -406,7 +406,8 @@
         <div class="header-acima">
             <div class="export-container">
                 <button class="theme-toggle-btn" id="pdfDownload">PDF</button>
-                <button class="theme-toggle-btn" id="downloadArquivo">Baixar curriculo</button>
+                <button class="theme-toggle-btn" id="downloadArquivoPTBR">Baixar curriculo PTBR</button>
+                <button class="theme-toggle-btn" id="downloadArquivoEN">Baixar curriculo EN</button>
             </div>
             <div class="theme-toggle-container">
                 <button class="theme-toggle-btn" id="langToggle">EN</button>
@@ -814,8 +815,12 @@
             document.body.removeChild(link);
         }
 
-        document.getElementById('downloadArquivo').addEventListener('click', ()=>{
+        document.getElementById('downloadArquivoPTBR').addEventListener('click', ()=>{
             baixarArquivo('files/curriculopdf/PTBR Curriculo Guilherme Coelho.pdf');
+        });
+        
+        document.getElementById('downloadArquivoEN').addEventListener('click', ()=>{
+            baixarArquivo('files/curriculopdf/EN Curriculum Guilherme Coelho.pdf');
         });
 
     </script>
